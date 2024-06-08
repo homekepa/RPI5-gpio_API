@@ -374,3 +374,23 @@
     ```
     
     위 4개의 파일을 컴파일하는 Makefile이다.
+
+  위에 컴파일후 devicedriver를 적재해야합니다.
+  ```
+  sudo insmode devicedriver.ko
+  ```
+  파일 접근 허용을 해야합니다.
+  devicederiver.c에서 접근권한을 666으로 정의 설정해두었습니다.
+  만일 접근권한이 필요한경우
+  ```
+  sudo chmod 666 /dev/deviceFile
+  ```
+  접근 권한은 원하는 방식으로 부여하시면 됩니다
+
+  수정 혹은 디바이스 파일을 제거하려면
+  ```
+  sudo rmmod devicedriver
+  ```
+
+  ./app을 실행하시면 됩니다.
+  
