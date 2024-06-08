@@ -15,8 +15,8 @@
     ### gpio_api.h
     
     ```c
-    #ifndef SSAFY_GPIO_H
-    #define SSAFY_GPIO_H
+    #ifndef GPIO_API_H
+    #define GPIO_API_H
     
     volatile uint32_t *PERIBase;
     volatile uint32_t *IOBank0;
@@ -127,7 +127,7 @@
         PERIBase = (uint32_t*) ioremap(0x1f00000000, 64*1024*1024);
         IOBank0 = PERIBase + 0xd0000/4;
         PADBank0 = PERIBase + 0xf0000/4;
-        pr_info("ssafy gpio module loaded\n");
+        pr_info("gpio module loaded\n");
         return 0;
     }
     
@@ -136,7 +136,7 @@
         gpio_output(20, "LOW");
         gpio_output(21, "LOW");
         iounmap(PERIBase);
-        pr_info("ssafy gpio module unloaded\n");
+        pr_info("gpio module unloaded\n");
     }
     
     module_init(gpio_init);
@@ -144,7 +144,7 @@
     
     ```
     
-    직접 메모리에 접근하는 코드로 Kernel에 적재하여 사용한다. 
+    직접 메모리에 접근하여 제어할수 있도록 비트연산을 하는 파일이다.
     
     **`int gpio_pinMode(int gpio_pin, char* mode)`** : 핀모드를 지정하는 함수
     
