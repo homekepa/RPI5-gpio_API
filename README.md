@@ -6,7 +6,7 @@
 - gpio_api.c 를 만든다.
 - 비트 연산 없이 개발할 수 있도록 API를 구성한다.
 - 필요한 API를 구성하고 매개변수를 정한다.
-- error 를 검출할 수 있도록 return 값도 정한다.
+- error 를 검출할 수 있도록 return 값도 정한다. (안함...)
 - ex) 아래는 API 예시이다.
     - gpio_pinMode(20, OUTPUT);
     - gpio_output(20, HIGH);
